@@ -171,7 +171,7 @@ const toDo = props => {
       <ShareButton onClick={showShareList}><span>Share List</span></ShareButton>
       <AddItemForm onSubmit={submit}>
         <BigInputWithBorder onChange={saveActiveToDoItem} ref={inputElAdd} type="text" placeholder="To-Do" />
-        <Button onClick={saveActiveToDoItem}>Hinzufügen</Button>
+        <Button onClick={saveActiveToDoItem}>Add</Button>
       </AddItemForm>
         <ToDoList 
           thisList={thisList} 
