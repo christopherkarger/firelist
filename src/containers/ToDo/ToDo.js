@@ -15,7 +15,7 @@ import ToDoList from './ToDoList';
 
 let createTime;
 let firebaseList;
-const stadardTitel = 'Titel';
+const stadardTitel = 'Title';
 
 const toDo = props => {
   const propsTimestamp = props.match.params.timestamp;
@@ -98,8 +98,8 @@ const toDo = props => {
     firebaseList.set(toDoItemsCopy).catch(error => {
       if (error.code ===  "PERMISSION_DENIED") {
         setshowModal((<Modal>
-            <Subheadline>Ups! Liste wird nicht mehr geteilt</Subheadline>
-            <Button onClick={() => props.history.push('/')}>Verstanden</Button>
+            <Subheadline>Ups! List is not longer shared</Subheadline>
+            <Button onClick={() => props.history.push('/')}>Got it</Button>
         </Modal>));
       }
 

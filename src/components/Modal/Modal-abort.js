@@ -6,10 +6,10 @@ const AbortModal = (props) => {
   
   return (
     <Modal>
-      <h2>Sind Sie sicher ?</h2>
-      <p>Beenden ohne speichern?</p>
-      <Button onClick={props.abort}>Abbrechen</Button>
-      <Button onClick={props.accept}>Ja</Button>
+      <h2>Are you sure ?</h2>
+      <p>Quit without saving?</p>
+      <Button onClick={props.abort}>Abort</Button>
+      <Button onClick={props.accept}>Yes</Button>
     </Modal>
   );
 } 

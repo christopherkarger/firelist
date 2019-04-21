@@ -119,7 +119,7 @@ const shareList = (props) => {
   }
   return (
     <Wrapper>
-      <BigHeadline withBorder>Suche nach Freunden</BigHeadline>
+      <BigHeadline withBorder>Search for friends</BigHeadline>
       <AddItemForm>
         <BigInputWithBorder ref={inputEl} type="text" onChange={showUsers} placeholder="Name"/>
         { users.length > 0 ? users.map((user,index) => {

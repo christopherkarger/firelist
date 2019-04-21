@@ -10,6 +10,7 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import firebase from '../../jsModules/firebase';
 
+const stadardTitel = 'Title';
 
 const Home = (props) => {
   let sharedFirebaseList;  
@@ -86,7 +87,7 @@ const Home = (props) => {
         }
       }
     } else {
-      peekText = 'Leere Liste';
+      peekText = 'Empty list';
     }
     
     return peekText;
@@ -104,7 +105,7 @@ const Home = (props) => {
           return (
             <li key={index}>
               <Link to={'/todo/' + timestamp }>
-                { elm[timestamp].title !== 'Titel' ? 
+                { elm[timestamp].title !== stadardTitel ? 
                   elm[timestamp].title : getListPeekText(elm[timestamp]) 
                 }
               </Link>
@@ -122,7 +123,7 @@ const Home = (props) => {
   const getSharedListItemsHTML = listItem => {
     return (
       <React.Fragment>
-        <Subheadline>Geteilte Listen</Subheadline>
+        <Subheadline>Shared lists</Subheadline>
         <List>
           { listItem.map((elm,index) => {
             let timestamp;
@@ -133,7 +134,7 @@ const Home = (props) => {
             return (
               <li key={index}>
                 <Link to={'/todo/' + timestamp + '/shared'}>
-                  { elm[timestamp].title !== 'Titel' ? 
+                  { elm[timestamp].title !== stadardTitel ? 
                     elm[timestamp].title : getListPeekText(elm[timestamp]) 
                   }
                 </Link>
@@ -149,11 +150,11 @@ const Home = (props) => {
   return (
     <Wrapper>
       <BigHeadline withBorder>
-        Hallo <span>{ props.userData ? props.userData.displayName.split(' ')[0] : null }!</span>
+        Hello <span>{ props.userData ? props.userData.displayName.split(' ')[0] : null }!</span>
       </BigHeadline>
 
       <Subheadline>
-        { (props.lists && props.lists.length > 0) ? 'Deine' :  'Keine' } Todo's
+        { (props.lists && props.lists.length > 0) ? 'Your' :  'No' } Todo's
       </Subheadline>
       
       { (props.lists && props.lists.length > 0) ? getListItemsHTML(props.lists) : null }

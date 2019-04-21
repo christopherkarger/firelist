@@ -19,7 +19,7 @@ const Login = (props) => {
     <Wrapper Login>
       <Logo src={flame} alt="firelist"/>
       <LogoTitle>FireList</LogoTitle>
-      <Button onClick={googleLogin}>Mit Google anmelden</Button>
+      <Button onClick={googleLogin}>Login with Google</Button>
     </Wrapper>
   )
 };
