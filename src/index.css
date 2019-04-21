@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.item-enter-active,
+.item-exit-active { 
+  transition: all .3s ease-in;
+}
+
+.item-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.item-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item-exit {
+  opacity: 1;
+}
+
+.item-exit-active {
+  opacity: 0;
+  transform: translateX(-10px);
+}

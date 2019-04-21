@@ -1,0 +1,33 @@
+{
+  "rules": {
+    
+		"users": {
+    	".read": "auth !== null",
+      ".indexOn": ["username"],
+      "$uid": {
+      	".write": "$uid == auth.uid"   
+      }
+    },
+    
+    "userlists": {
+    	"$uid": {
+      	".read": "$uid == auth.uid",
+ 				".write": "$uid == auth.uid",
+           
+        "lists": {
+        	"$createTime": {
+          	".read": "data.child('shareWith').hasChild(auth.uid) || $uid == auth.uid",
+          	".write": "data.child('shareWith').hasChild(auth.uid)  || $uid == auth.uid"
+        	} 
+        },
+          
+        "sharedlists": {
+        	"$friendId": {
+          	".write": "$friendId == auth.uid"   
+          }
+        }       
+        	
+      }
+    }
+	}
+}
