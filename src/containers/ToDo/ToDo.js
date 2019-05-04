@@ -168,7 +168,7 @@ const toDo = props => {
     <Wrapper>
       { showModal }
       <ListTitleInput type="text" value={listTitle} onChange={(event) => setListTitle(event.target.value)} onBlur={saveListTitle} />
-      <ShareButton onClick={showShareList}><span>Share List</span></ShareButton>
+      { !propsShared ? <ShareButton onClick={showShareList}><span>Share List</span></ShareButton> : null }
       <AddItemForm onSubmit={submit}>
         <BigInputWithBorder onChange={saveActiveToDoItem} ref={inputElAdd} type="text" placeholder="To-Do" />
         <Button onClick={saveActiveToDoItem}>Add</Button>
