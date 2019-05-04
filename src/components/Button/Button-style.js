@@ -152,7 +152,7 @@ export const BackButton = styled.button`
   }
 `;
 
-export const CheckButton = styled.button`
+export const CheckButton = styled.div`
   ${sharedStyle}
   background: none;
   width: 30px;
@@ -160,21 +160,6 @@ export const CheckButton = styled.button`
   border-radius: 50%;
   border: 2px solid ${colors.grey};
   margin: 10px 10px 0 20px;
-  &.done {
-    &:before {
-      content: '';
-      position: absolute;
-      width: 11px;
-      height: 5px;
-      border: 2px solid ${colors.red};
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      top: 8px;
-      left: 7px;
-    }
-  }
-
 `;
 
 
@@ -209,4 +194,3 @@ export const ShareButton = styled.button`
     font-size: 22px;
   }
 `;
-
