@@ -5,7 +5,7 @@ import { ListToDo } from '../../components/List/List-style';
 import { RemoveButton, CheckButton } from '../../components/Button/Button-style';
 import { CheckSymbol } from '../../components/Check/Check-style';
 
-const ToDoList = props => {
+const ToDoList = React.memo(props => {
   return (
     <TransitionGroup component={ListToDo} >
       { (props.thisList.items && props.thisList.items.length > 0) ? props.thisList.items.map((element,index) => {      
@@ -28,6 +28,6 @@ const ToDoList = props => {
       </TransitionGroup>
   )
 
-};
+});
 
 export default ToDoList;
